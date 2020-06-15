@@ -46,7 +46,7 @@ module.exports = (app) => {
   });
 
   app.get("/index", (req, res) => {
-      console.log("we in bitch")
+      console.log("dis thing on")
   Post.find({}).lean()
   .then(posts => {
     console.log("le promise", posts)
