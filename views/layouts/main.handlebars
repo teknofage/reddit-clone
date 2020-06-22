@@ -1,60 +1,43 @@
-const Post = require('../models/post');
-// const Post2 = require('../models/post2');
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-module.exports = (app) => {
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <title>Reddit.js</title>
+  </head>
+  <body>
 
-  app.get('/', (req, res) => {
-    res.render('home')
-  });
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand text-danger" href="/">Reddit</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-  // CREATE
-  app.post('/posts/new', (req, res) => {
-    // INSTANTIATE INSTANCE OF POST MODEL
-    const post = new Post(req.body);
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    {{#if currentUser}}
+                        <a href="/post/new" class="btn navbar-btn btn-success">New Post</a>
+                    {{/if}}
+                </li>
+            
+            </ul>
+            {{> navbar}}
+        </div>
+    </nav>
+    <div class="row">
+        
+    </div>
+    
+    <div class="container">
+        {{{ body }}}
+    </div>
 
-    // SAVE INSTANCE OF POST MODEL TO DB
-    post.save((err, post) => {
-      // REDIRECT TO THE ROOT
-      return res.redirect(`/index`);
-    })
-  });
-  
-  app.get('/posts/new', (req, res) => {
-      return res.render(`posts-new`);
-  });
-  
-  // app.post('/posts2/new', (req, res) => {
-  //   // INSTANTIATE INSTANCE OF POST MODEL
-  //   const post = new Post2(req.body);
-
-  //   // SAVE INSTANCE OF POST MODEL TO DB
-  //   post.save((err, post) => {
-  //     // REDIRECT TO THE ROOT
-  //     return res.redirect(`/`);
-  //   })
-  // });
-  
-  app.get("/posts/:id", function(req, res) {
-    // LOOK UP THE POST
-    Post.findById(req.params.id).lean()
-      .then(post => {
-        res.render("posts-show", { post });
-      })
-      .catch(err => {
-        console.log(err.message);
-      });
-  });
-
-  app.get("/index", (req, res) => {
-      console.log("dis thing on")
-  Post.find({}).lean()
-  .then(posts => {
-    console.log("le promise", posts)
-    res.render("posts-index", { posts });
-  })
-  .catch(err => {
-    console.log(err.message);
-  });
-})
-
-};
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
