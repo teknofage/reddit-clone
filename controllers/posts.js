@@ -9,7 +9,7 @@ module.exports = (app) => {
     })
 
     // CREATE
-    app.post("/posts/new", (req, res) => {
+    app.post("/post/new", (req, res) => {
         if (req.user) {
             var post = new Post(req.body);
             post.author = req.user._id;
@@ -33,7 +33,7 @@ module.exports = (app) => {
         }
     });
     
-    app.get('/posts/new', (req, res) => {
+    app.get('/post/new', (req, res) => {
         const currentUser = req.user;
         return res.render(`posts-new`, { currentUser });
     });
@@ -56,7 +56,7 @@ module.exports = (app) => {
         var currentUser = req.user;
         // res.render('home', {});
         console.log(req.cookies);
-        Post.find().populate('author')
+        Post.find({}).populate('author')
         .then(posts => {
             res.render('posts-index', { posts, currentUser });
             // res.render('home', {});
@@ -76,6 +76,20 @@ module.exports = (app) => {
         console.log(err);
         });
     });
+
+    // FETCH USER
+    app.get("/users/:username", (req, res) => {
+        const currentUser = req.user;
+        User.findOne({username:req.params.username}).populate("posts")
+        .then(user => {
+            const posts = user.posts;
+            return res.render("posts-index", {currentUser, posts})
+        })
+        .catch(err => {
+            console.log(err);
+        });
+    
+    })
 
 
 
