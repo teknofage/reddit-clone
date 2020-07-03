@@ -27,6 +27,8 @@ app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(expressValidator());
 app.use(express.static('public'));
+app.use(express.static('public'));
+
 
 var checkAuth = (req, res, next) => {
 	console.log("Checking authentication");
