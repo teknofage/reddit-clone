@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $(".vote-up").submit(function(e) {
-    //   e.preventDefault();
+    //   e.preventDefault(); - this was stopping the page from refreshing when votes were cast
   
       var postId = $(this).data("id");
       $.ajax({
@@ -16,7 +16,7 @@ $(document).ready(function() {
     });
   
     $(".vote-down").submit(function(e) {
-    //   e.preventDefault();
+    //   e.preventDefault(); - this was stopping the page from refreshing when votes were cast
   
       var postId = $(this).data("id");
       $.ajax({
