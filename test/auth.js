@@ -24,7 +24,6 @@ describe("User", function() {
             .post("/sign-up")
             .send({ username: "testone", password: "password" })
             .end(function(err, res) {
-            console.log(res.body);
             res.should.have.status(200);
             agent.should.have.cookie("nToken");
             done();

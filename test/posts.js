@@ -8,6 +8,7 @@ const agent = chai.request.agent(app);
 // Import the Post model from our models folder so we
 // we can use it in our tests.
 const Post = require('../models/post');
+const User = require('../models/user');
 const server = require('../server');
 
 chai.should();
@@ -19,13 +20,14 @@ describe('Posts', function() {
   const newPost = {
       title: 'post title',
       url: 'https://www.google.com',
-      summary: 'post summary'
+      summary: 'post summary',
+      subreddit: 'subreddit'
   };
 
-  const user = {
-    username: 'poststest',
-    password: 'testposts'
-  };
+    const user = {
+        username: 'poststest',
+        password: 'testposts'
+    };
 
   before(function (done) {
     agent
@@ -45,7 +47,7 @@ describe('Posts', function() {
   Post.estimatedDocumentCount()
   .then(function (initialDocCount) {
       agent
-          .post("/posts/new")
+          .post("/post/new")
           // This line fakes a form post,
           // since we're not actually filling out a form
           .set("content-type", "application/x-www-form-urlencoded")
@@ -71,7 +73,7 @@ describe('Posts', function() {
   .catch(function (err) {
       done(err);
   });
-});
+
   });
 
   after(function (done) {
@@ -93,7 +95,7 @@ describe('Posts', function() {
         done(err);
     });
   });
-
+});
 
 // How many posts are there now?
 // Make a request to create another

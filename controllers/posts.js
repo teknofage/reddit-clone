@@ -57,12 +57,10 @@ module.exports = (app) => {
 // INDEX
     app.get('/', (req, res) => {
         var currentUser = req.user;
-        // res.render('home', {});
-        console.log(req.cookies);
         Post.find({}).populate('author')
         .then(posts => {
             res.render('posts-index', { posts, currentUser });
-            // res.render('home', {});
+            
         }).catch(err => {
             console.log(err.message);
         })
