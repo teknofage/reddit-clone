@@ -5,10 +5,8 @@ var cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const expressValidator = require('express-validator');
 // const app = express();
-const app = express();
-const port = 3000;
-const connectDb = require("./src/connection");
-const User = require("./src/User.model");
+var app = express();
+const port = 3000
 
 // Use Body Parser
 app.use(cookieParser());
@@ -51,11 +49,5 @@ require('./controllers/comments.js')(app);
 require('./controllers/auth.js')(app);
 require('./controllers/replies.js')(app);
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
-
-// connectDb().then(() => {
-//     console.log("MongoDb connected");
-//     });
-
+app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
 module.exports = app;
-
