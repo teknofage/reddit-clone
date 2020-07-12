@@ -1,3 +1,6 @@
+// import { Button } from 'semantic-ui-react';
+// import { BrowserRouter as Router, Route, Link } from "reactrouterdom";
+
 const Post = require('../models/post');
 const Comment = require('../models/comment');
 const User = require('../models/user');
