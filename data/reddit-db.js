@@ -4,7 +4,8 @@ const assert = require("assert");
 require("dotenv").config()
 
 
-const url = `mongodb://${process.env.MONGO_URL}:27017/reddit-db`;
+// const url = `mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}:${process.env.MONGO_URL}:27017/reddit-db`;
+let url = process.env.NODE_ENV==="production" ? `mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_URL}:27017/reddit-db` : `mongodb://${process.env.MONGO_URL}:27017/reddit-db`;
 mongoose.Promise = global.Promise;
 mongoose.connect(
   url,
