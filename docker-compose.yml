@@ -4,9 +4,11 @@ services:
       build:
         context: .
       ports:
-        - '3050:3050'
+        - '8080:8080'
       depends_on:
         - mongo
+      volumes:
+        - ./:/usr/src/app
     mongo:
       image: mongo
       ports:
