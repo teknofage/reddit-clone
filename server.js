@@ -52,7 +52,7 @@ require('./controllers/replies.js')(app);
 
 mongoose.connect(MONGO_URL).then(() => {
     app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
-
+}
 
 module.exports = app;
 
