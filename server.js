@@ -49,7 +49,9 @@ require('./controllers/comments.js')(app);
 require('./controllers/auth.js')(app);
 require('./controllers/replies.js')(app);
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
+
+mongoose.connect(MONGO_URL).then(() => {
+    app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
 
 
 module.exports = app;
