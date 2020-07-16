@@ -74,9 +74,9 @@ $ docker-compose down
 
 #### Useful Links
 
-Heroku Live App: 
+Live App: 
 
-
+https://reddit-clone.dev.teknofage.com/
 
 #### Developers
 
