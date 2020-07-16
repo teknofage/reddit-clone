@@ -7,13 +7,15 @@ const expressValidator = require('express-validator');
 // const app = express();
 const app = express();
 const port = 3000;
+const mongoose = require('mongoose');
 
 
 mongoose.Promise = Promise;
 
 
-// connect to mongo db
+// Connect to Mongo db
 const mongoUri = process.env.MONGODB_URI;
+console.log(process.env.MONGO_URI)
 mongoose.connect(
   mongoUri,
   { server: { socketOptions: { keepAlive: 1 } } }
