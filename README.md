@@ -5,6 +5,8 @@
 
 ![Cirrus CI - Specific Branch Build Status](https://img.shields.io/cirrus/github/teknofage/reddit-clone/production?style=for-the-badge)
 
+![Docker Build Status](https://img.shields.io/docker/build/teknofage/reddit-clone?style=for-the-badge)
+
 ![Website](https://img.shields.io/website?down_color=light%20grey&down_message=offline&style=for-the-badge&up_color=green&up_message=online&url=https%3A%2F%2Freddit-clone.dev.teknofage.com)
 
 ## Reddit Clone is a copy of the popular discussion forum Reddit.
@@ -75,9 +77,9 @@ $ docker-compose down
 
 #### Useful Links
 
-Heroku Live App: 
+Live App: 
 
-
+https://reddit-clone.dev.teknofage.com/
 
 #### Developers
 
