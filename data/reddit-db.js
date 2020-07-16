@@ -8,7 +8,7 @@ require("dotenv").config()
 let url = process.env.NODE_ENV==="production" ? `mongodb://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_URL}:27017/reddit-db` : `mongodb://${process.env.MONGO_URL}:27017/reddit-db`;
 mongoose.Promise = global.Promise;
 mongoose.connect(
-  url,
+  mongoURI,
   { useNewUrlParser: true, useUnifiedTopology:true }
 );
 mongoose.connection.on("error", console.error.bind(console, "MongoDB connection Error:"));
