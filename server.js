@@ -8,6 +8,20 @@ const expressValidator = require('express-validator');
 const app = express();
 const port = 3000;
 
+
+mongoose.Promise = Promise;
+
+
+// connect to mongo db
+const mongoUri = process.env.MONGODB_URI;
+mongoose.connect(
+  mongoUri,
+  { server: { socketOptions: { keepAlive: 1 } } }
+);
+mongoose.connection.on('error', () => {
+  throw new Error(`unable to connect to database: ${mongoUri}`);
+});
+
 // Use Body Parser
 app.use(cookieParser());
 app.use(bodyParser.json());

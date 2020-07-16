@@ -1,15 +1,26 @@
 version: "3.7"
 services:
-    web:
+    app:
       build:
         context: .
+        dockerfile: Dockerfile
+      container_name: reddit-clone
+      image: reddit-clone
+      restart: unless stopped
+      env_file: .env
       ports:
         - '8080:8080'
-      depends_on:
-        - database
-      volumes:
-        - ./:/usr/src/app
-    database:
+      links: 
         - mongo
-        - ports:
+      depends_on:
+        - mongo
+    #   volumes:
+    #     - ./:/usr/src/app
+    
+    mongo:
+      container_name: mongo
+      image: mongo
+      restart: unless-stopped
+      env_file: .env
+      ports:
         - '27017:27017'
