@@ -13,16 +13,16 @@ const mongoose = require('mongoose');
 mongoose.Promise = Promise;
 
 
-// Connect to Mongo db
-const mongoUri = process.env.MONGODB_URI;
-console.log(process.env.MONGO_URI)
-mongoose.connect(
-  mongoUri,
-  { server: { socketOptions: { keepAlive: 1 } } }
-);
-mongoose.connection.on('error', () => {
-  throw new Error(`unable to connect to database: ${mongoUri}`);
-});
+// // Connect to Mongo db
+// const mongoUri = process.env.MONGODB_URI;
+// console.log(process.env.MONGO_URI)
+// mongoose.connect(
+//   mongoUri,
+//   { server: { socketOptions: { keepAlive: 1 } } }
+// );
+// mongoose.connection.on('error', () => {
+//   throw new Error(`unable to connect to database: ${mongoUri}`);
+// });
 
 // Use Body Parser
 app.use(cookieParser());
