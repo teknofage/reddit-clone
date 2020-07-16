@@ -2,7 +2,7 @@
 # **Reddit Clone**
 
 
-## Reddit CLone is a copy of the popular discussion forum Reddit.
+## Reddit Clone is a copy of the popular discussion forum Reddit.
 
 ___
 
@@ -55,9 +55,15 @@ Languages: JavaScript, HTML, CSS
 
 Make sure you have Docker Hub installed and running on your machine.
 
+$ git clone
+
 Run the following commands:
 
-docker-compose up
+$ docker-compose up
+
+To save and close the container:
+
+$ docker-compose down
 
 
 

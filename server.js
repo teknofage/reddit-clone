@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const expressValidator = require('express-validator');
 // const app = express();
 const app = express();
-const port = 3000;
+const port = 8080;
 const mongoose = require('mongoose');
 
 
@@ -65,7 +65,7 @@ require('./controllers/comments.js')(app);
 require('./controllers/auth.js')(app);
 require('./controllers/replies.js')(app);
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
+app.listen(port, () => console.log(`App listening at http://localhost:${port}`));
 
 
 
