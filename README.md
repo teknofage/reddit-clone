@@ -1,7 +1,7 @@
 <!-- Headings -->
 # **Reddit Clone**
 
-https://img.shields.io/docker/image-size/teknofage/reddit-clone?sort=date&style=for-the-badge
+![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/teknofage/reddit-clone?sort=date&style=for-the-badge)
 
 ## Reddit Clone is a copy of the popular discussion forum Reddit.
 
