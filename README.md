@@ -1,0 +1,73 @@
+<!-- Headings -->
+# **Reddit Clone**
+
+
+## Reddit CLone is a copy of the popular discussion forum Reddit.
+
+___
+
+⚠️ ⚠️ Disclaimer: This web application is still in development. 
+
+We plan to Dockerize it and add it to a CapRover droplet on Digital Ocean for continuous deployment.⚠️ ⚠️ 
+___
+
+
+### Table of Contents
+
+* [Rationale](#Rationale)
+* [Benefits](#Benefits)
+* [Getting Started](#Getting_Started)
+* [Useful Links](#Useful_Links)
+* [Developers](#Developers)
+
+
+#### Rationale
+
+This was an intricate and informative first foray into JavaScript and Node. As well as a chance to test out my budding containerization skills.
+
+
+#### Description
+
+Users can post questions, respond to others, and upvote or downvote responses. 
+
+They can also seach their posts and sort posts by category.
+
+
+Frameworks: Node.js, Handlebars.js
+
+Languages: JavaScript, HTML, CSS
+
+
+#### Benefits
+
+- Brings people closer together. 
+
+- A community with space for all kinds of thougts, musings, and discussions.
+
+- Helps those in need of guidance, or mentorship.
+
+- Encourages sharing of knowledge.
+
+
+#### Getting Started
+
+##Docker Installation instructions
+
+Make sure you have Docker Hub installed and running on your machine.
+
+Run the following commands:
+
+docker-compose up
+
+
+
+
+#### Useful Links
+
+Heroku Live App: 
+
+
+
+#### Developers
+
+Created by William Chadwick using a tutorial
