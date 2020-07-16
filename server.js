@@ -5,7 +5,6 @@ var cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
 const expressValidator = require('express-validator');
 // const app = express();
-<<<<<<< HEAD
 const app = express();
 const port = 8080;
 const mongoose = require('mongoose');
@@ -13,21 +12,6 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = Promise;
 
-
-// // Connect to Mongo db
-// const mongoUri = process.env.MONGODB_URI;
-// console.log(process.env.MONGO_URI)
-// mongoose.connect(
-//   mongoUri,
-//   { server: { socketOptions: { keepAlive: 1 } } }
-// );
-// mongoose.connection.on('error', () => {
-//   throw new Error(`unable to connect to database: ${mongoUri}`);
-// });
-=======
-var app = express();
-const port = 3000
->>>>>>> e663ab8bc27e0546e21e1164f449b62c8f2f25ff
 
 // Use Body Parser
 app.use(cookieParser());
@@ -70,12 +54,8 @@ require('./controllers/comments.js')(app);
 require('./controllers/auth.js')(app);
 require('./controllers/replies.js')(app);
 
-<<<<<<< HEAD
 app.listen(port, () => console.log(`App listening at http://localhost:${port}`));
 
 
 
-=======
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
->>>>>>> e663ab8bc27e0546e21e1164f449b62c8f2f25ff
 module.exports = app;
