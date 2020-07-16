@@ -1,6 +1,7 @@
 <!-- Headings -->
 # **Reddit Clone**
 
+![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/teknofage/reddit-clone?sort=date&style=for-the-badge)
 
 ![Cirrus CI - Specific Branch Build Status](https://img.shields.io/cirrus/github/teknofage/reddit-clone/production?style=for-the-badge)
 
