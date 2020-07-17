@@ -6,7 +6,6 @@ services:
         dockerfile: Dockerfile
       container_name: reddit-clone
       image: reddit-clone
-      restart: unless stopped
       env_file: .env
       ports:
         - '8080:8080'
@@ -22,7 +21,6 @@ services:
     mongo:
       container_name: mongo
       image: mongo
-      restart: unless-stopped
       env_file: .env
       ports:
         - '27017:27017'
